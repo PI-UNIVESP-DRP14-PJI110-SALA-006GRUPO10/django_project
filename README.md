@@ -1,4 +1,4 @@
-# rename_project
+# Django_project
 
 
 <!-- COLOCAR AQUI UM PRINT DA APLICAÇÂO, PROVAVELMENTE DAQUI PRA BAIXO VAI SER O REPO -->
