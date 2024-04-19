@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado do Questionário</title>
+</head>
+<body>
+    <h1>Resultado do Questionário</h1>
+    
+    {% if resultados %}
+        <ul>
+            {% for resultado in resultados %}
+                <li>
+                    <strong>Nome do Questionário:</strong> {{ resultado.cod_alu.nome }}<br>
+                    <strong>Nome do Usuário:</strong> {{ resultado.cod_usu.nome }}<br>
+                    <strong>Nível do Espectro:</strong> {{ resultado.nivel }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nenhum resultado encontrado para este usuário.</p>
+    {% endif %}
+</body>
+</html>

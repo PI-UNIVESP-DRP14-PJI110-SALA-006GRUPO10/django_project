@@ -1,0 +1,25 @@
+<nav>
+    <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'administracao' %}">Administração</a></li>
+        
+        {% if user.is_authenticated %}
+            <!-- Se o usuário estiver autenticado, exibe o botão "Logout" -->
+            <form method="post" action="{% url 'logout_view' %}">
+                {% csrf_token %}
+                <li><button type="submit">Logout</button></li>
+            </form>
+        {% else %}
+            <!-- Se o usuário não estiver autenticado, exibe o botão "Login" -->
+            <li><a href="{% url 'login_view' %}">Login</a></li>
+        {% endif %}
+    </ul>
+
+    <div class="user-welcome">
+        {% if user.is_authenticated %}
+            Bem-vindo: {{ user.username }}
+        {% else %}
+            Bem-vindo
+        {% endif %}
+    </div>
+</nav>

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Perguntas Questionário{% endblock %}
+
+{% block content %}
+<h1>Perguntas questionário</h1>
+<p>Nome do questionário: {{ nome_questionario }}</p>
+<p>Idade: {{ idade }}</p>
+<p>Escola: {{ escola }}</p>
+<p>Data: {{ data }}</p>
+
+<form method="post">
+    {% csrf_token %}
+    {% for pergunta in perquests %}
+        <h3>{{ pergunta.texto }}</h3>
+        {% for resposta in pergunta.resposta_set.all %}
+            <input type="radio" id="pergunta_{{ pergunta.id }}_resposta_{{ resposta.id }}" name="pergunta_{{ pergunta.id }}" value="{{ resposta.id }}">
+            <label for="pergunta_{{ pergunta.id }}_resposta_{{ resposta.id }}">{{ resposta.texto }}</label><br>
+        {% endfor %}
+    {% endfor %}
+    <button type="submit">Enviar</button>
+</form>
+
+{% if message %}
+    <p>{{ message }}</p>
+{% endif %}
+{% endblock %}

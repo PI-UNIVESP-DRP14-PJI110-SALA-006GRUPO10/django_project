@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Criar Questionário{% endblock %}
+
+{% block content %}
+<h1>Criar Questionário</h1>
+<form method="post">
+    {% csrf_token %}
+    <div>
+        <label for="id_nome">Nome:</label>
+        {{ form.nome }}
+    </div>
+    <div>
+        <label for="id_idade">Idade:</label>
+        {{ form.idade }}
+    </div>
+    <button type="submit">Enviar</button>
+</form>
+{% endblock %}
