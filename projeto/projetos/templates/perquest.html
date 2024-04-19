@@ -14,8 +14,8 @@
     {% for pergunta in perquests %}
         <h3>{{ pergunta.texto }}</h3>
         {% for resposta in pergunta.resposta_set.all %}
-            <input type="radio" id="pergunta_{{ pergunta.id }}_resposta_{{ resposta.id }}" name="pergunta_{{ pergunta.id }}" value="{{ resposta.id }}">
-            <label for="pergunta_{{ pergunta.id }}_resposta_{{ resposta.id }}">{{ resposta.texto }}</label><br>
+            <input type="radio" id="perquest_{{ pergunta.id }}_resposta_{{ resposta.id }}" name="perquest_{{ pergunta.id }}" value="{{ resposta.id }}">
+            <label for="perquest_{{ pergunta.id }}_resposta_{{ resposta.id }}">{{ resposta.texto }}</label><br>
         {% endfor %}
     {% endfor %}
     <button type="submit">Enviar</button>
