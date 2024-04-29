@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Teste e Resultado{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col">
+        <div class="teste">
+            <h1>Testagem rápida</h1>
+            <form method="post">
+                {% csrf_token %}
+                {% for pergunta in perguntas %}
+                <p class="perguntas">{{ pergunta.texto }}</p>
+                {% for resposta in pergunta.resposta_set.all %}
+                <div class="form-check form-check-inline" style="color: white;">
+                    <input class="form-check-input" type="radio" id="resposta_{{ resposta.id }}" name="perquest_{{ pergunta.id }}" value="{{ resposta.id }}">
+                    <label class="form-check-label" for="resposta_{{ resposta.id }}">{{ resposta.texto }}</label><br>
+                </div>
+                {% endfor %}
+                {% endfor %}
+            <button type="submit" class="btn btn-outline-light">Enviar Respostas</button>
+            </form>
+        </div>
+    </div>
+    <div class="col d-flex justify-content-center align-items-center">
+        <div class="resultado" style="max-width: 400px;">
+            {% if espectro %}
+            <h1>Resultado</h1>
+            <p>O seu espectro é: <strong style="text-transform: uppercase;">{{ espectro }}</strong></p>
+            {% if espectro == 'Baixo' %}
+            <p style="color: white; text-transform: uppercase;">A <strong>chance</strong> da criança receber um eventual diagnóstico de autismo é <strong>BAIXA</strong></p>
+            {% elif espectro == 'Médio' %}
+            <p style="color: white; text-transform: uppercase;">É indicado aos pais que <strong>busquem um pediatra ou um psicólogo</strong> e que este aplique novamente o <strong>M-CHAT</strong> e, eventualmente, a segunda etapa: a <strong>entrevista de seguimento</strong></p>
+            {% else %}
+            <p style="color: white; text-transform: uppercase;">É indicado aos pais que busquem o <strong>encaminhamento a um especialista</strong> (neuropediatra) para <strong>obter um diagnóstico</strong></p>
+            {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

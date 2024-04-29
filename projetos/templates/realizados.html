@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Testes Realizados{% endblock %}
+
+{% block content %}
+<h1>Últimos Resultados</h1>
+
+<div class="row align-items-center">
+    <div class="col" style="flex: 1; margin-top: 20px;">
+        <ul>
+            {% for resultado in resultados %}
+            <li style="color: white; margin-top: 10px;">
+                <strong>Nome do Questionário:</strong> {{ resultado.cod_alu.nome }}
+                <br>
+                <strong>Nome do Usuário:</strong> {{ resultado.cod_usu.nome }}
+                <br>
+                <strong>Nível do Espectro:</strong> <strong>{{ resultado.nivel }}</strong>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col d-flex justify-content-center" style="flex: 1;">
+    <div>
+        <div class="text-center">
+            <h2><a href="{% url 'aluno' %}" style="color:white; text-decoration: none;">Refazer Teste</a></h2>
+        </div>
+        <a href="{% url 'aluno' %}" style="color:white;">Clique aqui para refazer o teste</a>
+    </div>
+</div>
+
+</div>
+
+{% endblock %}

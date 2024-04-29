@@ -1,0 +1,72 @@
+.img-container{
+    position: relative;
+}
+
+.img-texto{
+    position: absolute;
+    top: 200px;
+    left: 70%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.241);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    text-align: justify;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: bold;
+}
+.img-texto-citacao{
+    float: right;
+    text-align: right;
+    font-size: 15px;
+}
+
+.fieldWrapper{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    max-width: 200px;
+}
+
+.fieldWrapper label {
+    margin-bottom: 1px;
+    color: white;
+}
+
+.fieldWrapper input {
+    border-radius: 5px;
+    border-width: 1px;
+}
+
+.perguntas{
+    margin: 0;
+    padding-top: 10px;
+    color: white;
+}
+
+.btn{
+    display: block;
+}
+
+h1{
+    text-align: center;
+    color: white;
+}
+
+h2, p{
+    color: white;
+}
+
+.background {
+    text-align: center;
+}
+
+.form-container {
+    display: inline-block; /* Garante que o elemento se ajuste ao conteúdo */
+    text-align: left; /* Reseta a alinhamento do texto para o conteúdo do formulário */
+}
+
+.teste {
+    margin-left: 2%;
+}

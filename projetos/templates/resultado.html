@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Teste e Resultado{% endblock %}
+
+{% block content %}
+
+    <h1>Resultado do Questionário</h1>
+    
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col">
+                {% if resultados %}
+                    <div style="color: white;">
+                        {% for resultado in resultados %}
+                            <p>
+                                <strong>Nome do testado:</strong> {{ resultado.cod_alu.nome }}<br>
+                                <strong>Nome do usuário:</strong> {{ resultado.cod_usu.nome }}<br>
+                                <strong>Nível do espectro:</strong> {{ resultado.nivel }}
+                            </p>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p>Nenhum resultado encontrado para este usuário.</p>
+                {% endif %}
+            </div>
+            <div class="col d-flex justify-content-center align-items-center">
+                {% if resultados %}
+                    {% for resultado in resultados %}
+                        {% if resultado.nivel == 'Baixo' %}
+                            <p style="color: white; text-transform: uppercase;">A <strong>chance</strong> da criança receber um eventual diagnóstico de atismo é <strong>BAIXA</strong></p>
+                        {% elif resultado.nivel == 'Médio' %}
+                            <p style="color: white; text-transform: uppercase;">É indicado aos pais que <strong>busquem um pediatra ou um psicólogo</strong> e que este aplique novamente o <strong>M-CHAT</strong> e, eventualmente, a segunda etapa: a <strong>entrevista de seguimento</strong></p>
+                        {% else %}
+                            <p style="color: white; text-transform: uppercase;">É indicado aos pais que busquem o <strong>encaminhamento a um especialista</strong> (neuropediatra) <strong> obter um diagnóstico</strong></p>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
