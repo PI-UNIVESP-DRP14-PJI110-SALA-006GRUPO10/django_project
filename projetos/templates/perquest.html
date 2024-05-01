@@ -3,29 +3,60 @@
 {% block title %}Perguntas Questionário{% endblock %}
 
 {% block content %}
-<div class="teste">
-    <h1>Perguntas questionário</h1>
-    <p>Nome do aluno: {{ nome_questionario }}</p>
-    <p>Idade: {{ idade }}</p>
-    <p>Escola: {{ escola }}</p>
-    <p>Data: {{ data }}</p>
 
-    <form method="post">
-        {% csrf_token %}
-        {% for pergunta in perquests %}
-            <p class="perguntas">{{ pergunta.texto }}</p>
-            {% for resposta in pergunta.resposta_set.all %}
-            <div class="form-check form-check-inline" style="color: white;">
-                <input class="form-check-input" type="radio" id="perquest_{{ pergunta.id }}_resposta_{{ resposta.id }}" name="perquest_{{ pergunta.id }}" value="{{ resposta.id }}">
-                <label class="form-check-label" for="perquest_{{ pergunta.id }}_resposta_{{ resposta.id }}">{{ resposta.texto }}</label><br>
+<h1>Perguntas M-CHAT</h1>
+
+<div class="row align-items-center">
+    <div class="col d-flex justify-content-center align-items-center">
+        <div class="teste">
+            <form method="post">
+                {% csrf_token %}
+                {% for pergunta in perquests %}
+                <p class="perguntas">{{ pergunta.texto }}</p>
+                {% for resposta in pergunta.resposta_set.all %}
+                <div class="form-check form-check-inline" style="color: white;">
+                    <input class="form-check-input" type="radio" id="perquest_{{ pergunta.id }}_resposta_{{ resposta.id }}" name="perquest_{{ pergunta.id }}" value="{{ resposta.id }}">
+                    <label class="form-check-label" for="perquest_{{ pergunta.id }}_resposta_{{ resposta.id }}">{{ resposta.texto }}</label><br>
+                </div>
+                {% endfor %}
+                {% endfor %}
+                <button type="submit" class="btn btn-outline-light btn-block">Enviar</button>
+            </form>
+
+            {% if message %}
+            <p>{{ message }}</p>
+            {% endif %}
+        </div>
+    </div>
+    <div class="col d-flex justify-content-center align-items-center">
+        <div class="resultado" style="max-width: 400px;">
+            <p>Nome do aluno: {{ nome_questionario }}</p>
+            <p>Idade: {{ idade }}</p>
+            <p>Escola: {{ escola }}</p>
+            <p>Data: {{ data }}</p>
+            {% if resultados %}
+            <div style="color: white;">
+                {% for resultado in resultados %}
+                <h1>Resultado</h1>
+                <p>
+                    Nível do espectro: <strong>{{ resultado.nivel }}</strong>
+                </p>
+                {% if resultado.nivel == 'Baixo' %}
+                <p style="text-transform: uppercase;">A chance da criança receber um eventual diagnóstico de autismo é
+                    BAIXA</p>
+                {% elif resultado.nivel == 'Médio' %}
+                <p style="text-transform: uppercase;">É indicado aos pais que busquem um pediatra ou um psicólogo e que
+                    este aplique novamente o M-CHAT e, eventualmente, a segunda etapa: a entrevista de seguimento</p>
+                {% else %}
+                <p style="text-transform: uppercase;">É indicado aos pais que busquem o encaminhamento a um especialista
+                    (neuropediatra) para obter um diagnóstico</p>
+                {% endif %}
+                {% endfor %}
             </div>
-            {% endfor %}
-        {% endfor %}
-        <button type="submit" class="btn btn-outline-light">Enviar</button>
-    </form>
-
-    {% if message %}
-        <p>{{ message }}</p>
-    {% endif %}
+            {% else %}
+            {% endif %}
+        </div>
+    </div>
 </div>
+
 {% endblock %}
