@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.urls import path
 from .views import cadastro, aluno, perquest, administracao, home, login_view, logout_view, teste, realizados, refazer_teste
 
