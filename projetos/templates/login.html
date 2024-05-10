@@ -5,11 +5,15 @@
     <h1>Login</h1>
     <div class="background">
         <div class="form-container">
-            <form method="post">
-                {% csrf_token %}
-                {{ form }}
-                <button type="submit" class="btn btn-outline-light">Entrar</button>
-            </form>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="fieldWrapper">
+                        {{ field.errors }}
+                        {{ field.label_tag }} {{ field }}
+                        {{ form }}
+                    </div>
+                    <button type="submit" class="btn btn-outline-light btn-block">Entrar</button>
+                </form>
         </div>
         <div>
             <br>

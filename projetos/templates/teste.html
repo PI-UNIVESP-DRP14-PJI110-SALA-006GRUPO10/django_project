@@ -3,10 +3,10 @@
 {% block title %}Teste e Resultado{% endblock %}
 
 {% block content %}
+<h1>Testagem rápida</h1>
 <div class="row">
     <div class="col">
         <div class="teste">
-            <h1>Testagem rápida</h1>
             <form method="post">
                 {% csrf_token %}
                 {% for pergunta in perguntas %}
@@ -18,7 +18,7 @@
                 </div>
                 {% endfor %}
                 {% endfor %}
-            <button type="submit" class="btn btn-outline-light">Enviar Respostas</button>
+            <button type="submit" class="btn btn-outline-light btn-block">Enviar Respostas</button>
             </form>
         </div>
     </div>

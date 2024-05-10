@@ -37,7 +37,7 @@ def login_view(request):
             return render(request, 'login.html', {'form': form, 'error_message': error_message})
     else:
         form = AuthenticationForm()
-    
+
     return render(request, 'login.html', {'form': form})
 
 def logout_view(request):
@@ -46,6 +46,7 @@ def logout_view(request):
 
 @login_required
 def perquest(request):
+    resultados = None  # Inicializa resultados como None
     if request.method == 'POST':
         respostas = {}
         for key, value in request.POST.items():
@@ -66,8 +67,9 @@ def perquest(request):
         # Cria um novo resultado associado ao questionário e usuário
         resultado = Resultado.objects.create(cod_alu=aluno_recente, cod_usu=usuario, nivel=espectro)
 
-        return redirect('resultado')
-    
+        # Obtém os resultados associados ao usuário
+        resultados = Resultado.objects.filter(cod_usu=usuario).order_by('-id')[:1]
+
     # Obtém informações do aluno
     usuario = Usuario.objects.get(user=request.user)
     aluno_recente = Aluno.objects.filter(usuario=usuario).order_by('-data').first()
@@ -82,13 +84,14 @@ def perquest(request):
         'nome_questionario': nome_questionario,
         'idade': idade,
         'escola': escola,
-        'data': data
+        'data': data,
+        'resultados': resultados,
     }
     return render(request, 'perquest.html', contexto)
 
 def processar_respostas(respostas):
     total_pontos = sum(Resposta.objects.get(id=resposta_id).valor for resposta_id in respostas.values())
-    
+
     print("Total de pontos:", total_pontos)  # Adiciona este print para verificar o total de pontos
 
     if total_pontos <= 2:
@@ -101,15 +104,6 @@ def processar_respostas(respostas):
     print("Espectro:", espectro)  # Adiciona este print para verificar o espectro atribuído
     return espectro
 
-@login_required
-def resultado(request):
-    # Obtém o usuário associado ao User
-    usuario = Usuario.objects.get(user=request.user)
-
-    # Obtém os resultados associados ao usuário
-    resultados = Resultado.objects.filter(cod_usu=usuario).order_by('-id')[:1]
-
-    return render(request, 'resultado.html', {'resultados': resultados})
 
 @login_required
 def aluno(request):
@@ -157,7 +151,7 @@ def teste(request):
                 total_pontos += Resposta.objects.get(id=resposta_id).valor
 
         espectro = calcular_espectro(total_pontos)
-    
+
     perguntas = Perquest.objects.all()
     respostas = {pergunta.id: '' for pergunta in perguntas}
     contexto = {'perguntas': perguntas, 'respostas': respostas, 'espectro': espectro}

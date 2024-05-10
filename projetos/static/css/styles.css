@@ -1,21 +1,40 @@
-.img-container{
-    position: relative;
+.background-home {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
 }
 
-.img-texto{
-    position: absolute;
-    top: 200px;
-    left: 70%;
-    transform: translateX(-50%);
+.img-container {
+    flex: 1;
+    max-width: 50%;
+}
+
+.img-texto {
     background-color: rgba(255, 255, 255, 0.241);
     padding: 20px;
-    text-align: center;
-    border-radius: 10px;
     text-align: justify;
     color: rgb(255, 255, 255);
     font-size: 20px;
     font-weight: bold;
+    max-width: 80%;
+    margin-top: 200px;
+    margin-right: 100px;
 }
+
+@media screen and (max-width: 768px) {
+    .background-home {
+        flex-direction: column;
+        align-items: left;
+    }
+
+    .img-texto {
+        max-width: 100%;
+        margin-top: 10px;
+        margin-right:0;
+    }
+}
+
 .img-texto-citacao{
     float: right;
     text-align: right;
@@ -63,8 +82,8 @@ h2, p{
 }
 
 .form-container {
-    display: inline-block; /* Garante que o elemento se ajuste ao conteúdo */
-    text-align: left; /* Reseta a alinhamento do texto para o conteúdo do formulário */
+    display: inline-block;
+    text-align: left;
 }
 
 .teste {

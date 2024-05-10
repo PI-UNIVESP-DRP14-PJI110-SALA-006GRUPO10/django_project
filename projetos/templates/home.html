@@ -1,22 +1,20 @@
 {% extends 'base.html' %}
 
-
 {% block title %}Página Inicial{% endblock %}
 
 {% block content %}
-<div class="background">
+<div class="background-home">
     <div class="img-container">   
     {% load static%}<img src="{% static 'img/autismo.jpg' %}" alt="Autimo" style="width:100vw; height: auto;" />
     </div>  
     <div class="img-texto">
-        O autismo, ou Transtorno do Espectro Autista (TEA), é uma condição neurológica que afeta a forma como uma pessoa percebe 
-        o mundo, processa informações e interage com os outros. Cada indivíduo autista é único, com suas próprias 
-        habilidades, desafios e interesses. É essencial compreender que o autismo não é uma doença a ser curada, mas sim uma
-         parte fundamental da identidade de uma pessoa.
-         <p class="img-texto-citacao">Autor: Prof. Luis Henrique Dias - Psicólogo CRP 08/28412</p>
+        <p class="img-texto-paragraph">
+            O autismo, ou Transtorno do Espectro Autista (TEA), é uma condição neurológica que afeta a forma como uma pessoa percebe 
+            o mundo, processa informações e interage com os outros. Cada indivíduo autista é único, com suas próprias 
+            habilidades, desafios e interesses. É essencial compreender que o autismo não é uma doença a ser curada, mas sim uma
+            parte fundamental da identidade de uma pessoa.
+        </p>
+        <p class="img-texto-citacao">Autor: Prof. Luis Henrique Dias - Psicólogo CRP 08/28412</p>
     </div>
 </div>  
-
-    
-
 {% endblock %}

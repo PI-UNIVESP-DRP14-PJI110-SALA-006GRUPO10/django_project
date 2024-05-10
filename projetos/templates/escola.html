@@ -3,7 +3,7 @@
 {% block title %}Escola{% endblock %}
 
 {% block content %}
-<div class="background">    
+<div class="background">
     <h1>Criar Escola</h1>
         <form method="post">
             {% csrf_token %}
@@ -19,7 +19,7 @@
                 <label for="id_endereco">Endereço:</label>
                 <input type="text" id="id_endereco" name="endereco" required>
             </div>
-            <button type="submit" class="btn btn-outline-light">Salvar</button>
+            <button type="submit" class="btn btn-outline-light btn-block">Salvar</button>
         </form>
 </div>
 
