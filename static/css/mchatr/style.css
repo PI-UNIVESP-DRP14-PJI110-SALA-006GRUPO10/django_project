@@ -154,7 +154,7 @@ body {
 .quiz-question {
 	color: #ffffff;
 	font-weight: bold;
-	font-size: 2.6rem;
+	font-size: 1.6rem;
 	text-transform: uppercase;
 	margin-bottom: 7vh;
 }
@@ -434,7 +434,7 @@ label {
 
 	.quiz-question {
         margin-bottom: 0.8rem; /* Add bottom margin to each question container */
-		font-size: 1.3rem;
+		font-size: 1.2rem;
     }
 
 	.textTopQuiz h1{
@@ -576,8 +576,8 @@ label {
 	}
 	
 	.fieldUserLogin, .fieldUserPasswd {
-		width: 52%; /* Full width */
-		padding: 0.3vh;
+		width: 70%; /* Full width */
+		padding: 1vh;
 		margin-bottom: 0.2vh; /* Space between fields */
 		border-radius: 4px; /* Rounded corners for inputs */
 	}
@@ -589,12 +589,12 @@ label {
 	}
 	
 	.loginButton {
-		width: 40%; /* Full width for buttons */
-		padding: 2px;
+		width: 50%; /* Full width for buttons */
+		padding: 0.8vh;
 		border: none;
 		border-radius: 5px; /* Rounded corners for buttons */
 		margin-top: 1.5vh; /* Space between buttons */
-		margin-bottom: 5px; /* Space between buttons */
+		margin-bottom: 0.7vh; /* Space between buttons */
 		background-color: #6fb4f9; /* Blue background */
 		color: #ffffff; /* White text */
 		font-weight: bold; /* Bold text */
@@ -690,7 +690,7 @@ label {
 	display: block;
 	color: #ffffff; /* White color for the text */
 	font-weight: bold; /* Optional: if you want labels to be bold */
-	font-size: 2vh;
+	font-size: 2.6vh;
 	margin-top: 0.5vh;
 	align-self:center;
 }
@@ -715,6 +715,14 @@ label {
 	background-color: crimson;
 }
 
+.quiz-question {
+		color: #ffffff;
+		font-weight: bold;
+		font-size: 1.3rem;
+		text-transform: uppercase;
+		margin-bottom: 7vh;
+}
+
 .failedSignupMessage {
 	width: 100%;
 	font-size: small;
@@ -726,5 +734,10 @@ label {
 	padding: 0;
 	background-color: crimson;
 }
-
+.mchatTitleLoginBottom {
+    margin-bottom: -8vh;
+}
+.hidden-title {
+    display: none;
+}
 }

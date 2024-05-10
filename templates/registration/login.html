@@ -23,15 +23,19 @@
 						</div>
 					{% endfor %}
 				{% endif %}
-			</form>
+            </form>
 			<a class="signupHyperlink" href="{% url 'signup' %}">CADASTRAR NOVO USUÁRIO</a>
 		</div>
-		<div class="d-none d-md-block col-12 col-md-8 col-lg-7 mchatTitle text-center text-lg-left">
-			<h1>M-CHAT</h1>
-			<span class="textDarker">FORMULÁRIO DE </span><span class="textSofter">RASTREAMENTO PRECOCE </span><span
-				class="textDarker">DE </span> <span class="textSofter">AUTISMO </span><span class="textDarker">PARA
-				CRIANÇAS ATÉ 30 MESES
-			</span>
+		<div class="col-12 col-md-8 col-lg-7 mchatTitle mchatTitleLoginBottom text-center text-lg-left">
+			<div>
+				<h1>M-CHAT</h1>
+			</div>
+			<div class="d-none d-md-block">
+				<span class="textDarker">FORMULÁRIO DE </span><span class="textSofter">RASTREAMENTO PRECOCE </span><span
+					class="textDarker">DE </span> <span class="textSofter">AUTISMO </span><span class="textDarker">PARA
+					CRIANÇAS ATÉ 30 MESES
+				</span>
+			</div>
 		</div>
 	</div>
 {% endblock %}
