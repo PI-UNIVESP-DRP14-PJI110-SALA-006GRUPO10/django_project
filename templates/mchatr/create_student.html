@@ -1,0 +1,46 @@
+{% extends "mchatr/base.html" %}
+
+{% block title %}M-CHAT Cadastro{% endblock %}
+
+{% block content %}
+<a href="{% url 'initial' %}" class="btn btn-outline-light homeLink btn-sm">HOME</a>
+<div class="container">
+    <div class="outterWrapper">
+        <div class="col-md-6 wrapperLoginCreate">
+            <h2 class="titleSignup">CADASTRAR ALUNO</h2>
+            <form method="post" class="login-form">
+                {% csrf_token %}
+                <div class="row leftFormSignup">
+                    <div class="col-md-12 eachBlockWrapperCreate">
+                        <label for="id_nome" class="text-white">NOME</label>
+                        {{ form.nome }}
+                        {% if form.nome.errors %}
+                            <div class="failedSignupMessage">{{ form.nome.errors|striptags }}</div>
+                        {% endif %}
+
+                        <label for="id_turma" class="text-white">TURMA</label>
+                        {{ form.turma }}
+                        {% if form.turma.errors %}
+                            <div class="failedSignupMessage">{{ form.turma.errors|striptags }}</div>
+                        {% endif %}
+
+                        <label for="id_escola" class="text-white">ESCOLA</label>
+                        {{ form.escola }}
+                        {% if form.escola.errors %}
+                            <div class="failedSignupMessage">{{ form.escola.errors|striptags }}</div>
+                        {% endif %}
+                    </div>
+                    <button type="submit" class="btn btn-primary loginButtonCreate">CADASTRAR</button>
+                </div>
+            </form>
+            {% if messages %}
+                <div class="alert alert-danger">
+                    {% for message in messages %}
+                        <p>{{ message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,142 @@
+/* Custom CSS for M-CHAT initial page */
+.mchatr-title-initial {
+    font-weight: bold;
+    color: white;
+    margin-bottom: 2rem;
+}
+
+.mchatr-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+}
+
+.mchatr-subtitle {
+    color: white;
+    font-size: 1rem;
+}
+
+
+
+.mchatr-text-softer {
+    color: #8791aa;
+}
+
+.mchatr-blockquote {
+    color: white;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    text-align: justify;
+	font-weight: 200;
+}
+
+.mchatr-text-darker {
+    color: #ffffff;
+	font-weight: 700;
+}
+
+.mchatr-blockquote-footer {
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.mchatr-footer-text {
+    color: white;
+    font-size: 0.75rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.mchatr-btn {
+    background-color: #ffffff;
+    color: #3484F0;
+    border: none;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    width: 60%;
+    text-align: left;
+    padding: 1.2vh 1vw;
+	font-weight: 600;
+	font-size: 1.3rem;
+}
+
+.mchatr-btn-test {
+    background-color: #c4dbfa;
+    color: #3484F0;
+    border: none;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    width: 60%;
+    text-align: left;
+    padding: 1.2vh 1vw;
+	margin-top: 2vh;
+	font-weight: 600;
+	font-size: 1.3rem;
+}
+
+.mchatr-btn:hover {
+    background-color: #64a2f2;
+    color: white;
+}
+
+.mchatr-btn-test:hover {
+    background-color: #03c4ff;
+    color: white;
+}
+
+.mchatr-button-group {
+    display: grid;
+    gap: 1rem;
+}
+
+.mchatr-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 85vh;
+}
+
+.mchatr-left,
+.mchatr-right {
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+	.mchatr-btn {
+		background-color: #ffffff;
+		color: #3484F0;
+		border: none;
+		box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+		width: 100%;
+		text-align: center;
+		padding: 2vh 1vw;
+		font-weight: 600;
+		font-size: 1rem;
+	}
+	
+	.mchatr-btn-test {
+		background-color: #c4dbfa;
+		color: #3484F0;
+		border: none;
+		box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+		width: 100%;
+		text-align: center;
+		padding: 2vh 1vw;
+		margin-top: 2vh;
+		font-size: 1rem;
+		font-weight: 600;
+	}
+
+	.mchatr-title-initial {
+		font-weight: bold;
+		color: white;
+		margin-bottom: 0.8rem;
+		text-align: center;
+	}
+
+	.homePageLeft {
+		display:flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+}
