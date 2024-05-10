@@ -1,0 +1,170 @@
+{% extends "mchatr/base.html" %}
+
+{% block title %}M-CHAT{% endblock %}
+
+{% block content %}
+
+<div class="d-flex flex-column flex-md-row textTopQuiz align-items-center justify-content-between">
+	{% if user.is_authenticated %}
+	<form action="{% url 'logout' %}" method="post">
+		{% csrf_token %}
+		<button type="submit" class="btn  btn-outline-light logoutButton">SAIR</button>
+	</form>
+	{% endif %}
+	<h1>M-CHAT</h1>
+</div>
+<div class="container">
+	<div class="row justify-content-between align-items-center">
+		<div class="col-md-4 col-lg-5 homePageLeft">
+			<h2 class="mchatr-title-initial">BEM-VINDO(A)!</h2>
+
+			<div class="d-grid gap-2">
+				<button type="button" class="btn mchatr-btn"
+					onclick="location.href='{% url 'create_student' %}'">CADASTRAR <strong>ALUNO</strong></button>
+				<button type="button" class="btn mchatr-btn" data-bs-toggle="modal"
+					data-bs-target="#studentSelectionModal">PESQUISAR <strong>ALUNO</strong></button>
+				<button type="button" class="btn mchatr-btn" data-bs-toggle="modal"
+					data-bs-target="#studentUpdateSelectionModal">ATUALIZAR <strong>ALUNO</strong></button>
+				<button type="button" class="btn mchatr-btn" data-bs-toggle="modal"
+					data-bs-target="#studentDeleteSelectionModal">DELETAR <strong>ALUNO</strong></button>
+				<button type="button" class="btn mchatr-btn-test" data-bs-toggle="modal"
+					data-bs-target="#studentTestSelectionModal">PREENCHER <strong>TESTE M-CHAT</strong></button>
+			</div>
+		</div>
+
+		<div class="col-md-7 col-lg-7 text-center text-lg-left d-none d-md-block">
+			<blockquote class="mchatr-blockquote">
+				<p class="mchatr-quote">"O TRANSTORNO DO ESPECTRO AUTISTA (TEA), É UMA CONDIÇÃO QUE AFETA A FORMA COMO
+					UMA PESSOA PERCEBE O MUNDO, PROCESSA INFORMAÇÕES E INTERAGE COM OS OUTROS. <span
+						class="mchatr-text-darker">CADA INDIVÍDUO AUTISTA É ÚNICO</span>, COM SUAS PRÓPRIAS HABILIDADES,
+					DESAFIOS E INTERESSES. É ESSENCIAL COMPREENDER QUE O AUTISMO NÃO É UMA DOENÇA A SER CURADA, MAS SIM
+					UMA PARTE FUNDAMENTAL DA IDENTIDADE DE UMA PESSOA"</p>
+				<footer class="mchatr-blockquote-footer">PROF. DR. LUÍS HENRIQUE DIAS, PSICÓLOGO CPR 08/28412</footer>
+			</blockquote>
+		</div>
+	</div>
+</div>
+
+
+<!-- Modal for student selection -->
+<div class="modal fade" id="studentSelectionModal" tabindex="-1" role="dialog" aria-labelledby="studentSelectionModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="studentSelectionModalLabel">ESCOLHA UM <strong>ALUNO</strong></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                {% if students.exists %}
+                <select class="form-control" id="studentSelect">
+                    {% for student in students %}
+                    <option value="{{ student.id }}">{{ student.nome }}</option>
+                    {% endfor %}
+                </select>
+                {% else %}
+                <p>AINDA NAO HÁ ALUNOS. CADASTRE ALGUM ANTES DE SELECIONAR.</p>
+                {% endif %}
+            </div>
+            <div class="modal-footer">
+                {% if students.exists %}
+                <button type="button" class="btn modal-button" onclick="submitStudentSelection()">PESQUISAR <strong>ALUNO</strong></button>
+                {% else %}
+                <button type="button" class="btn modal-button" data-bs-dismiss="modal">Close</button>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for student test fill -->
+<div class="modal fade" id="studentTestSelectionModal" tabindex="-1" role="dialog" aria-labelledby="studentTestSelectionModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="studentTestSelectionModalLabel">ESCOLHA UM <strong>ALUNO</strong></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                {% if students.exists %}
+                <select class="form-control" id="studentSelect">
+                    {% for student in students %}
+                    <option value="{{ student.id }}">{{ student.nome }}</option>
+                    {% endfor %}
+                </select>
+                {% else %}
+                <p>AINDA NAO HÁ ALUNOS. CADASTRE ALGUM ANTES DE PREENCHER O TESTE.</p>
+                {% endif %}
+            </div>
+            <div class="modal-footer">
+                {% if students.exists %}
+                <button type="button" class="btn modal-button" onclick="submitTestStudentSelection()">PREENCHER TESTE <strong>M-CHAT</strong></button>
+                {% else %}
+                <button type="button" class="btn modal-button" data-bs-dismiss="modal">Close</button>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for student update -->
+<div class="modal fade" id="studentUpdateSelectionModal" tabindex="-1" role="dialog" aria-labelledby="studentUpdateSelectionModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="studentUpdateSelectionModalLabel">ESCOLHA UM <strong>ALUNO</strong></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                {% if students.exists %}
+                <select class="form-control" id="studentSelect">
+                    {% for student in students %}
+                    <option value="{{ student.id }}">{{ student.nome }}</option>
+                    {% endfor %}
+                </select>
+                {% else %}
+                <p>AINDA NAO HÁ ALUNOS. CADASTRE ALGUM ANTES DE ATUALIZAR AS INFORMAÇÕES DE UM ALUNO.</p>
+                {% endif %}
+            </div>
+            <div class="modal-footer">
+                {% if students.exists %}
+                <button type="button" class="btn modal-button" onclick="submitUpdateStudentSelection()">ATUALIZAR <strong>ALUNO</strong></button>
+                {% else %}
+                <button type="button" class="btn modal-button" data-bs-dismiss="modal">Close</button>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for student delete -->
+<div class="modal fade" id="studentDeleteSelectionModal" tabindex="-1" role="dialog" aria-labelledby="studentDeleteSelectionModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="studentDeleteSelectionModalLabel">ESCOLHA UM <strong>ALUNO</strong> PARA DELETAR</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                {% if students.exists %}
+                <select class="form-control" id="studentDeleteSelect">
+                    {% for student in students %}
+                    <option value="{{ student.id }}">{{ student.nome }}</option>
+                    {% endfor %}
+                </select>
+                {% else %}
+                <p>AINDA NÃO HÁ ALUNOS. CADASTRE ALGUM ANTES DE DELETAR.</p>
+                {% endif %}
+            </div>
+            <div class="modal-footer">
+                {% if students.exists %}
+                <button type="button" class="btn btn-danger" onclick="confirmDelete()">DELETAR <strong>ALUNO</strong></button>
+                {% else %}
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

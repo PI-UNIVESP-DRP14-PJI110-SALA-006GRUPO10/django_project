@@ -1,0 +1,34 @@
+{% extends 'mchatr/base.html' %}
+{% block title %}Quiz Result{% endblock %}
+
+{% block content %}
+<div class="d-flex flex-column flex-md-row textTopQuiz align-items-center justify-content-between">
+	<h3>RESULTADO</h3>
+	<h1>M-CHAT</h1>
+</div>
+<div></div>
+<div class="container-fluid d-flex">
+	<div class="row justify-content-center align-items-center">
+		<div class="col-12 col-md-8 d-flex wrapperSmallCard">
+			<div wrapperSmallCard>
+				<h1 class="resultTitle">RESULTADO</h1>
+				<div class="card resultCard">
+					  <p class="card-title">RISCO DE TEA: <span class="resultCardInner">{{ risk_level }}</span></p>
+				</div>
+			</div>
+			<div class="fillerResultPage"></div>
+			<div class="resultPhraseDiv d-flex align-items-center justify-self-end">
+				{%if risk_level == 'ALTO'%}
+					<h2 class="resultPhrase">É INDICADO AOS PAIS QUE BUSQUEM O <strong>ENCAMINHAMENTO A UM ESPECIALISTA</strong> (NEUROPEDIATRA) <strong>PARA OBTER UM DIAGNÓSTICO</strong></h2>
+				{%elif risk_level == 'MÉDIO'%}
+					<h2 class="resultPhrase">É INDICADO AOS PAIS QUE <strong>BUSQUEM UM PEDIATRA OU UM PSICÓLOGO</strong> E QUE ESTE APLIQUE NOVAMENTE O <strong>M-CHAT</strong> E, EVENTUALMENTE, A SEGUNDA ETAPA: A <strong>ENTREVISTA DE SEGUIMENTO</strong></h2>
+				{%else%}
+					<h2 class="resultPhrase">A <strong>CHANCE</strong> DA CRIANÇA RECEBER UM EVENTUAL DIAGNÓSTICO DE AUTISMO <strong>É BAIXA</strong></h2>
+				{%endif%}
+			</div>
+		</div>
+	</div>
+</div>
+<a href="{% url 'initial' %}" class="btn btn-outline-light col-2 align-self-center backButtonResult">Voltar</a>
+
+{% endblock %}

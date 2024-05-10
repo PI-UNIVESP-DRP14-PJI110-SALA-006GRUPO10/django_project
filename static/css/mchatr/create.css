@@ -1,0 +1,82 @@
+.eachBlockWrapperCreate {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: start;
+	width: 70%;
+}
+
+#id_nome, #id_turma, #id_escola {
+	border-radius: 8px;
+	border: 0;
+	padding: 1vh;
+	background-color: #ffffff;
+	width: 80%;
+}
+
+.outterWrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: center;
+}
+
+.loginButtonCreate {
+	width: 30%; /* Full width for buttons */
+	padding: 1.3vh;
+	margin-top: 3.5vh;
+	border: none;
+	border-radius: 8px; /* Rounded corners for buttons */
+	margin-bottom: 10px; /* Space between buttons */
+	align-self: center;
+	background-color: #6fb4f9; /* Blue background */
+	color: #ffffff; /* White text */
+	font-weight: bold; /* Bold text */
+	cursor: pointer; /* Cursor indicates it's clickable */
+	transition: background-color 0.3s, color 0.3s; /* Smooth transition for both background and text color */
+	align-self: center;
+	margin-left: 1vw;
+}
+
+@media (max-width: 768px) {
+	.eachBlockWrapperCreate {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		margin-top: 1.5vh;
+	}
+
+	#id_nome, #id_turma, #id_escola {
+		border-radius: 8px;
+		border: 0;
+		padding: 1vh;
+		background-color: #ffffff;
+		width: 90%;
+	}
+
+	.outterWrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.loginButtonCreate {
+		width: 60%; /* Full width for buttons */
+		padding: 1.3vh;
+		margin-top: 6vh;
+		margin-bottom: -3vh;
+		border: none;
+		border-radius: 4px; /* Rounded corners for buttons */
+		background-color: #6fb4f9; /* Blue background */
+		color: #ffffff; /* White text */
+		font-weight: bold; /* Bold text */
+		cursor: pointer; /* Cursor indicates it's clickable */
+		transition: background-color 0.3s, color 0.3s; /* Smooth transition for both background and text color */
+		z-index: 100;
+		margin-left: 1vw;
+		align-items: center;
+	}
+}

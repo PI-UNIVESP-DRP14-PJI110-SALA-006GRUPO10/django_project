@@ -1,0 +1,228 @@
+.modal-header {
+	display: flex;
+	justify-content: space-between;
+	color: #3484F0;
+}
+
+.modal-button {
+	background-color: #3484F0;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.modal-button:hover {
+	background-color: #2E77D0;
+	color:white;
+}
+.wrapperSmallCardRead {
+	margin-top: -5vh;
+	margin-bottom: 1vh;
+	width: 100%;
+}
+
+.modal-body {
+	padding: 20px;
+}
+
+.resultPhraseDivRead {
+	margin-bottom: 5vh;
+}
+
+.resultPhrase a {
+	/*make the link normal */
+	color: #ffffff;
+	font-weight: bolder;
+}
+
+.infoStudent {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2vh;
+    margin-bottom: 10vh;
+    color: #adcdf8;
+    font-size: 1.5rem;
+}
+
+.infoStudent strong{
+    color: #ffffff;
+}
+
+
+.resultCardRead {
+    border-radius: 8px;
+    text-align: center;
+	font-weight: 700;
+	background-color: #c4dbfa;
+	color: #757575;
+	width: 60%;
+	display: block;
+	padding: 0;
+}
+
+.card-title-read {
+	font-size: 1.3rem;
+	font-weight: 700;
+	margin-top:0vh;
+	margin-bottom: 0.5vh;
+	padding-top: 0.5vh;
+	padding-bottom: 1vh;
+	background-color: #c4dbfa;
+	border-radius: 8px;
+}
+
+.resultCardInnerRead {
+	align-self: center;
+	font-weight: bolder;
+	padding-left: 1rem;
+	padding-top: 0.1rem;
+	padding-bottom: 1rem;
+	color: #3484F0;
+	white-space: nowrap;
+	font-size: 2rem;
+}
+
+.backButtonResultRead {
+	font-weight: bold;
+	margin-top: 2vh;
+	color: #ffffff;
+	width: 10vw;
+	z-index: 100;
+	margin-top: -7vh;
+}
+.backButtonResult:hover {
+	color: #3484F0;
+}
+
+.homeLinkRead {
+	color: #ffffff;
+	font-weight: bold;
+	margin-left: 1vw;
+	margin-top: 1.5vh;
+	margin-bottom: 5vh;
+	text-decoration: none;
+	width: 4%;
+}
+
+.textTopQuizRead h1{
+	font-weight: bolder;
+	font-size: 4.5rem;
+	color: #EAF6FF;
+	margin-top: 1.5vh;
+	margin-right: 2vw;
+}
+
+.textTopQuizRead h3{
+	color: #EAF6FF;
+	font-weight: bold;
+	margin-top: 3vh;
+	margin-left: 4vw;
+}
+
+.infoStudent {
+	/* Make the title in one side of the flex-box and the content in the other */
+	display: grid;
+	grid-template-columns: 0.5fr 1fr;
+	gap: 2vh;
+	width: 100%;
+}
+
+/* Make it smaller for small screens*/
+@media (max-width: 768px) {
+	.infoStudent {
+		font-size: 0.9rem;
+		gap: 1vh;
+		display: grid;
+		margin-bottom: 3vh;
+		margin-top: 4vh;
+		margin-left: 10vw;
+
+	}
+
+	.wrapperSmallCardRead {
+		margin-top: -5vh;
+		margin-bottom: 1vh;
+		width: 90%;
+	}
+
+	.resultCardRead {
+		font-size: 1rem;
+		align-self: center;
+		margin-left: 1vw;
+		width: 100%;
+	}
+	
+	.homeLinkRead {
+		align-self: start;
+		margin-left: 3vw;
+		margin-top: 2vh;
+		margin-bottom: -2vh;
+		width: 20%;
+  }
+
+  .textTopQuizRead h1{
+	font-weight: bolder;
+	font-size: 2rem;
+	color: #EAF6FF;
+	margin-top: 0.1vh;
+	margin-left: 0;
+}
+
+.textTopQuizRead h3{
+	color: #EAF6FF;
+	font-weight: bold;
+	margin-top: 1vh;
+	font-size: 1rem;
+	margin-left: 0;
+}
+
+	.resultPhraseDivRead {
+		margin-bottom: 0;
+	}
+
+	.resultPhraseDivRead {
+		color: white;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 1%;           
+		padding: 0px;            
+		box-sizing: border-box;
+	}
+
+	.resultTitle, .resultPhraseDivRead {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 15px;
+		margin-top: 2vh;
+    }
+
+
+	.backButtonResultRead {
+		font-weight: bold;
+		color: #ffffff;
+		width: 25vw;
+		margin-top: 2vh;
+		margin-bottom: -1vh;
+		width: 40%;
+	}
+
+	.resultCardInnerRead {
+		align-self: center;
+		font-weight: bold;
+		padding-left: 1rem;
+		padding-top: 0.3rem;
+		padding-bottom: 1rem;
+		color: #3484F0;
+		font-size: 1.5rem;
+		margin-top: 3vh;
+	}
+	.card-title-read {
+		font-size: 1.3rem;
+		font-weight: 400;
+		padding: 0.4vh;
+		margin-bottom: 0;
+	}
+}

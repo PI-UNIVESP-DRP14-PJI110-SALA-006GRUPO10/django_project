@@ -1,0 +1,32 @@
+{% extends 'mchatr/base.html' %}
+{% block title %}M-CHAT Quiz{% endblock %}
+
+{% block content %}
+	<div class="d-flex flex-column flex-md-row textTopQuiz align-items-center justify-content-between">
+		<h3>PREENCHER TESTE M-CHAT</h3>
+		<h1>M-CHAT</h1>
+	</div>
+	<div class="container-fluid">
+		<div class="row justify-content-center align-items-center">
+			<div class="col-12 col-md-8">
+				<form id="quizForm" method="POST" action="{% url 'idempo' %}">
+					{% csrf_token %}
+					{% for question in questions %}
+					<div class="quiz-question" id="question-{{ forloop.counter }}" data-index="{{ forloop.counter0 }}"
+						style="{% if forloop.counter > 2 %}display: none;{% endif %}">
+						<div class="question-text">{{ forloop.counter }}) {{ question.text }}</div>
+						<div class="response-buttons gap-6 ">
+							<button type="button" class="btn custom-btn-quiz" data-question="{{ forloop.counter }}" data-answer="Yes">SIM</button>
+							<button type="button" class="btn custom-btn-quiz" data-question="{{ forloop.counter }}" data-answer="No">NÃO</button>
+						</div>
+						<input type="hidden" name="q{{ forloop.counter }}" value="">
+					</div>
+					{% endfor %}
+					<button type="submit" class="btn custom-btn-submit" style="display: none;" id="submitBtn">ENVIAR</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+{% endblock %}

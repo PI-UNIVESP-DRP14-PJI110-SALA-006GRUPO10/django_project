@@ -1,0 +1,729 @@
+@import url("home.css");
+@import url("create.css");
+@import url("read.css");
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Replace with actual font-family if different */
+    background-color: #3484F0; /* Dark Blue */
+	max-height: 100vh;
+}
+
+.homeLink {
+	color: #ffffff;
+	font-weight: bold;
+	margin-left: 1vw;
+	margin-top: 1.5vh;
+	text-decoration: none;
+	width: 4%;
+}
+
+.wrapperLogin {
+	margin-top: 5vh;
+	padding-right: 0w;
+}
+
+.mchatTitle h1 {
+	color: #f7f7f7;
+	font-size: 7vh; /* Responsive font size */
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+  }
+  
+  .mchatTitle span.textSofter {
+	color: #f7f7f7;
+	font-size: 3.6vh; /* Responsive font size */
+	font-weight: bold;
+  }
+  
+  .mchatTitle span.textDarker {
+	color: #c4dbfa;
+	font-size: 3.5vh; /* Responsive font size */
+	font-weight: bold;
+  }
+  
+  .fixed-bottom-left {
+	color: #c4dbfa;
+	position: fixed;
+	left: 1rem;
+	bottom: 0.5rem;
+	font-size: 1rem;
+  }
+  
+  .fixed-bottom-right {
+	position: fixed;
+	right: 1rem;
+	bottom: 1rem;
+	max-width: 150px; /* Adjust to the desired maximum width */
+  }
+  
+  
+  .custom-btn {
+    font-weight: bold;
+    background-color: #ffffff;  /* White background */
+    color: #3484F0;            /* Bootstrap primary blue for text */
+    border-radius: 8px;       /* Rounded corners */
+    border: none;              /* No border */
+    padding: 1rem 1.5rem;      /* Padding for a wider button appearance */
+    margin-bottom: 0.5rem;     /* Space between buttons */
+    font-size: 1rem;           /* Font size */
+    width: 100%;               /* Full width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for both background and text color */
+}
+
+.custom-btn:hover {
+    background-color: #6fb4f9; /* Slightly darker blue for hover */
+    color: #FFFFFF;            /* White text for better visibility */
+}
+
+.custom-btn-quiz:hover {
+    background-color: #6fb4f9; /* Slightly darker blue for hover */
+    color: #FFFFFF;            /* White text for better visibility */
+}
+
+.custom-btn-quiz {
+    font-weight: bold;
+    background-color: #ffffff;
+    color: #3484F0;
+    border-radius: 8px;
+    border: none;
+    padding: 0.7rem 2rem; /* Adjusted padding for better fit on small screens */
+    margin: 0.5rem; /* Added margin for spacing */
+    font-size: 0.9rem; /* Smaller font size on small screens */
+    width: auto; /* Adjust width to content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+.card {
+    background-color: #EAF6FF; /* Light blue background similar to the UNIVESP branding */
+}
+
+.card-body {
+    padding: 2rem; /* More padding for better layout */
+}
+
+.card-text {
+    margin-bottom: 2rem; /* Space above the buttons */
+}
+
+.textTopQuiz h1{
+	font-weight: bolder;
+	font-size: 4.5rem;
+	color: #EAF6FF;
+	margin-top: 1.5vh;
+	margin-right: 2vw;
+}
+
+.textTopQuiz h3{
+	color: #EAF6FF;
+	font-weight: bold;
+	margin-top: 3vh;
+	margin-left: 4vw;
+}
+
+.selected-btn {
+    background-color: #0056b3; /* Darker blue */
+    color: #ffffff; /* White text */
+}
+
+.custom-btn-submit {
+    font-weight: bold;
+    background-color: #ffffff; /* Primary color for the button */
+    color: #3484F0; /* Text color for the button */
+    border-radius: 8px;
+    border: none;
+    padding: 0.1rem 2rem;
+    font-size: 2.7rem;
+    margin-top: 6.8rem; /* Extra space above the button */
+    width: auto; /* Adjust width to content */
+    cursor: pointer; /* Cursor indicates it's clickable */
+    transition: background-color 0.3s, color 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    display: block; /* This makes it easier to center */
+    margin-left: auto; /* Auto margins for horizontal centering */
+    margin-right: auto; /* Auto margins for horizontal centering */
+}
+
+.custom-btn-submit:hover {
+    background-color: #6fb4f9; /* Slightly darker shade on hover for feedback */
+}
+
+.quiz-question {
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 2.1rem;
+	text-transform: uppercase;
+	margin-bottom: 7vh;
+}
+
+.globalWrapper {
+	height: 80vh;
+}
+
+.resultTitle {
+	color: #ffffff;
+	font-weight: bolder;
+	font-size: 3rem;
+	margin-top: 2vh;
+	margin-bottom: 10vh;
+}
+
+.resultCard {
+	background-color: #c4dbfa;
+	color: #757575;
+	width: 20vw;
+	font-weight: bold;
+}
+
+.resultCard p {
+	font-weight: bold;
+	padding-left: 1rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	font-size: xx-large;
+}
+.resultCardInner {
+	align-self: center;
+	font-weight: bolder;
+	padding-left: 1rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	color: #3484F0;
+	white-space: nowrap;
+	font-size: larger;
+}
+
+.resultPhrase {
+	color:#ffffff;
+}
+.resultPhraseDiv {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;           
+    padding: 20px;            
+    box-sizing: border-box; 
+}
+
+.fillerResultPage {
+	margin-right: 13vw;
+}
+
+.backButtonResult {
+	font-weight: bold;
+	margin-top: 2vh;
+	color: #ffffff;
+	width: 10vw;
+	z-index: 100;
+	position:calc(100% - 10vh);
+}
+.backButtonResult:hover {
+	color: #3484F0;
+}
+
+.wrapperSmallCard {
+	margin-top: 15vh;
+	margin-bottom: 15vh;
+}
+
+.signupHyperlink {
+	color: #c4dbfa;
+	font-weight: bold;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ffffff; /* White color for the text */
+    font-weight: bold; /* Optional: if you want labels to be bold */
+}
+
+.fieldUserLogin, .fieldUserPasswd {
+    width: 75%; /* Full width */
+    padding: 1.8vh;
+    margin-bottom: 2vh; /* Space between fields */
+    border-radius: 10px; /* Rounded corners for inputs */
+    border: 1px solid #ccc; /* Border color */
+}
+
+.login-form {
+	font-size: larger;
+}
+
+.loginButton {
+    width: 20%; /* Full width for buttons */
+    padding: 10px;
+    border: none;
+    border-radius: 5px; /* Rounded corners for buttons */
+    margin-bottom: 10px; /* Space between buttons */
+	align-self: center;
+	background-color: #6fb4f9; /* Blue background */
+	color: #ffffff; /* White text */
+	font-weight: bold; /* Bold text */
+	cursor: pointer; /* Cursor indicates it's clickable */
+	transition: background-color 0.3s, color 0.3s; /* Smooth transition for both background and text color */
+}
+
+.signupButton {
+    width: 40%; /* Full width for buttons */
+    padding: 10px;
+    border: none;
+    border-radius: 5px; /* Rounded corners for buttons */
+    margin-bottom: 10px; /* Space between buttons */
+	align-self: center;
+	background-color: #6fb4f9; /* Blue background */
+	color: #ffffff; /* White text */
+	font-weight: bold; /* Bold text */
+	cursor: pointer; /* Cursor indicates it's clickable */
+	transition: background-color 0.3s, color 0.3s; /* Smooth transition for both background and text color */
+}
+
+.signupButton:hover {
+    background-color: #547bb6; /* Blue background */
+    color: #ffffff; /* White text */
+}
+
+.loginButton:hover {
+    background-color: #547bb6; /* Blue background */
+    color: #ffffff; /* White text */
+}
+
+
+.failedLoginMessage {
+	width: 75%;
+	color: #ffffff;
+	font-weight: 600;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	background-color: crimson;
+}
+
+.titleSignup {
+	font-size: 5vh;
+	font-weight: bolder;
+	color: #ffffff;
+	margin-top: 2vh;
+	margin-bottom: 5vh;
+}
+
+.loginButtonSignup {
+	width: 60%; /* Full width for buttons */
+	padding: 1vh;
+	margin-top: 3.5vh;
+	border: none;
+	border-radius: 5px; /* Rounded corners for buttons */
+	margin-bottom: 10px; /* Space between buttons */
+	align-self: center;
+	background-color: #6fb4f9; /* Blue background */
+	color: #ffffff; /* White text */
+	font-weight: bold; /* Bold text */
+	cursor: pointer; /* Cursor indicates it's clickable */
+	transition: background-color 0.3s, color 0.3s; /* Smooth transition for both background and text color */
+	align-self: center;
+}
+
+.eachBlockWrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: start;
+	width: 65%;
+}
+
+#id_username, #id_password1, #id_password2, #id_school, #id_role {
+	margin-top: 0px;
+	padding: 1.5vh;
+	margin-bottom: 1vh; /* Space between fields */
+	border-radius: 4px; /* Rounded corners for inputs */
+	border: 1px solid #ccc; /* Border color */
+	font-weight: 600;
+
+}
+
+#id_school, #id_role {
+	text-align: center;
+	text-align-last: center;
+	border-radius: 8px; /* Rounded corners for inputs */
+	color: #3484F0;
+}
+
+.failedSignupMessage {
+	width: 100%;
+	color: #ffffff;
+	font-weight: 600;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	background-color: crimson;
+}
+
+.logoutButton {
+	color: #ffffff;
+	font-weight: bold;
+	margin-left: 2vw;
+	margin-top: 0vh;
+	text-decoration: none;
+	width: 100%;
+	padding: 0.5vh;
+}
+
+  @media (max-width: 768px) {
+	.fixed-bottom-right {
+	  max-width: 100px; /* Smaller on mobile */
+	  right: 0.5rem;
+	  bottom: 0.5rem;
+	}
+
+	.logoutButton {
+		align-self: start;
+		color: #ffffff;
+		font-weight: bold;
+		width: 100%;
+		padding: 0.5vh;
+		margin-top: 2vh;
+	}
+  
+	.mchatTitle h1 {
+	  font-size: 2.4rem; /* Adjusted smaller font size for mobile */
+	}
+  
+	.mchatTitle span {
+	  font-size: 2rem;
+	}
+  
+	/* Stack the login form and title on top of each other on smaller screens */
+	.mchatTitle {
+	  text-align: center;
+	  margin-bottom: 1rem;
+	}
+  
+  
+	/* Adjust the bottom text size for mobile */
+	.fixed-bottom-left {
+	  font-size: 0.7rem; /* Adjusted smaller font size for bottom text */
+	  bottom: 1rem;
+	}
+  
+	/* Make sure the text in the fixed bottom left doesn't overflow */
+	.fixed-bottom-left p {
+	  overflow: hidden;
+	  text-overflow: ellipsis;
+	}
+
+	.custom-btn {
+		padding: 0.60rem 1rem; /* Smaller padding on small screens */
+		font-size: 0.875rem; /* Smaller font size on small screens */
+	  }
+	
+	  .custom-btn-quiz {
+        padding: 0.4rem 0.8rem; /* Even smaller padding */
+        font-size: 0.8rem; /* Smaller font size */
+    }
+
+    .question-text {
+        margin-bottom: 0.2rem; /* Ensure there's space between the text and buttons */
+    }
+
+	.quiz-question {
+        margin-bottom: 0.8rem; /* Add bottom margin to each question container */
+		font-size: 0.9rem;
+    }
+
+	.textTopQuiz h1{
+		font-weight: bolder;
+		font-size: 2rem;
+		color: #EAF6FF;
+		margin-top: 2vh;
+		margin-left: 0;
+	}
+	
+	.textTopQuiz h3{
+		color: #EAF6FF;
+		font-weight: bold;
+		margin-top: 4vh;
+		font-size: 1rem;
+		margin-left: 0;
+	}
+
+	.custom-btn-submit {
+		font-weight: bold;
+		background-color: #ffffff; /* Primary color for the button */
+		color: #3484F0; /* Text color for the button */
+		border-radius: 8px;
+		border: none;
+		padding: 1rem 1.5rem;
+		font-size: 2rem;
+		width: auto; /* Adjust width to content */
+		cursor: pointer; /* Cursor indicates it's clickable */
+		transition: background-color 0.3s, color 0.3s;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+		display: block; /* This makes it easier to center */
+		margin-left: auto; /* Auto margins for horizontal centering */
+		margin-right: auto; /* Auto margins for horizontal centering */
+		align-self: center;
+		justify-self: center;
+	}
+
+
+	.globalWrapper {
+		height: 80vh;
+	}
+	
+	.resultTitle {
+		color: #ffffff;
+		font-weight: bolder;
+		font-size: 1rem;
+		margin-top: 2vh;
+		margin-bottom: 10vh;
+	}
+	
+	.resultCard {
+		background-color: #c4dbfa;
+		color: #757575;
+		width: 30vw;
+		font-weight: bold;
+	}
+	
+	.resultCard p {
+		font-weight: bold;
+		padding-left: 0.1rem;
+		padding-top: 0.1rem;
+		padding-bottom: 0.1rem;
+		font-size: small;
+	}
+	.resultCardInner {
+		font-weight: bolder;
+		color: #3484F0;
+		font-size: medium;
+		
+	}
+	
+	.resultPhrase {
+		color:#ffffff;
+	}
+	.resultPhraseDiv {
+		color: white;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 1%;           
+		padding: 0px;            
+		box-sizing: border-box; 
+	}
+	
+	.fillerResultPage {
+		margin-right: 1vw;
+	}
+
+	.globalWrapper {
+		height: 80vh;
+	}
+	
+	.container-fluid {
+        padding: 20px;
+    }
+
+    .resultTitle, .resultPhraseDiv {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 15px;
+		margin-top: 1px;
+    }
+
+    .resultCard {
+        padding-top: 10px;
+		padding-left: 10px;
+		width: 60vw;
+    }
+
+    .resultPhraseDiv {
+        padding: 15px;
+    }
+
+    .resultPhrase {
+        font-size: 1rem;
+        line-height: 1.25;
+    }
+	.wrapperSmallCard {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin-top: -3vh;
+		margin-bottom: -9vh;
+	}
+	.backButtonResult {
+		font-weight: bold;
+		color: #ffffff;
+		width: 25vw;
+		margin-top: 0.1vh;
+	}
+
+	label {
+		display: block;
+		margin-bottom: 5px;
+		color: #ffffff; /* White color for the text */
+		font-weight: bold; /* Optional: if you want labels to be bold */
+		font-size: medium;
+	}
+	
+	.fieldUserLogin, .fieldUserPasswd {
+		width: 52%; /* Full width */
+		padding: 0.3vh;
+		margin-bottom: 0.2vh; /* Space between fields */
+		border-radius: 4px; /* Rounded corners for inputs */
+	}
+	
+	.login-form {
+		font-size: larger;
+		align-items: center;
+		justify-content: center;
+	}
+	
+	.loginButton {
+		width: 40%; /* Full width for buttons */
+		padding: 2px;
+		border: none;
+		border-radius: 5px; /* Rounded corners for buttons */
+		margin-top: 1.5vh; /* Space between buttons */
+		margin-bottom: 5px; /* Space between buttons */
+		background-color: #6fb4f9; /* Blue background */
+		color: #ffffff; /* White text */
+		font-weight: bold; /* Bold text */
+		cursor: pointer; /* Cursor indicates it's clickable */
+		transition: background-color 0.3s, color 0.3s; /* Smooth transition for both background and text color */
+	}
+	
+	.loginButton:hover {
+		background-color: #547bb6; /* Blue background */
+		color: #ffffff; /* White text */
+	}
+	
+	.wrapperLogin {
+		margin-top: 0.1vh;
+		margin-bottom: 3vh;
+		padding-left: 0.1vw;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	.homeLink {
+		align-self: start;
+		margin-left: 3vw;
+		margin-top: 2vh;
+		margin-bottom: -2vh;
+		width: 20%;
+  }
+  .login-form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+  }
+
+
+#id_username, #id_password1, #id_password2, #id_school, #id_role {
+	width: 95%; /* Full width */
+	padding: 0.5vh;
+	margin-bottom: 0.1vh; /* Space between fields */
+	border-radius: 4px; /* Rounded corners for inputs */
+	border: 1px solid #ccc; /* Border color */
+	font-weight: 500;
+	color: #3484F0;
+}
+
+.wrapperLogin{
+	margin-top: 1vh;
+	margin-bottom: 0.1vh;
+	padding-left: 0.1vw;
+	display: flex;
+	flex-direction: column;	
+	align-items: center;
+	justify-content: center;
+}
+
+.titleSignup {
+	font-size: 4.4vh;
+	font-weight: bolder;
+	color: #ffffff;
+	margin-top: 0vh;
+	margin-bottom: 1vh;
+	display:flex;
+	justify-content: center;
+	align-content: center;
+}
+
+.eachBlockWrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+
+.loginButtonSignup {
+	width: 100%; /* Full width for buttons */
+	padding: 1vh;
+	margin-top: 1.5vh;
+	border: none;
+	border-radius: 5px; /* Rounded corners for buttons */
+	margin-bottom: 10px; /* Space between buttons */
+	align-self: center;
+	background-color: #6fb4f9; /* Blue background */
+	color: #ffffff; /* White text */
+	font-weight: bold; /* Bold text */
+	cursor: pointer; /* Cursor indicates it's clickable */
+	transition: background-color 0.3s, color 0.3s; /* Smooth transition for both background and text color */
+	z-index: 100;
+}
+
+.wrapperLogin label {
+	display: block;
+	color: #ffffff; /* White color for the text */
+	font-weight: bold; /* Optional: if you want labels to be bold */
+	font-size: 3vh;
+	margin-top: 0.5vh;
+	align-self:center;
+}
+
+.leftFormSignup {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+
+}
+
+.failedLoginMessage {
+	color: #ffffff;
+	font-weight: 600;
+	font-size: small;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	background-color: crimson;
+}
+
+.failedSignupMessage {
+	width: 100%;
+	font-size: small;
+	color: #ffffff;
+	font-weight: 600;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	background-color: crimson;
+}
+
+}

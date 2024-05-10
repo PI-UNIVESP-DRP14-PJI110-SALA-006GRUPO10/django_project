@@ -1,0 +1,26 @@
+{% extends "mchatr/base.html" %}
+
+{% block title %}M-CHAT{% endblock %}
+
+{% block content %}
+<div class="container">
+	<div class="row justify-content-center align-items-center" style="min-height: 85vh;">
+		<div class="col-12 col-sm-10 col-md-8 col-lg-5">
+			<div class="buttonOptionsInitial">
+				<div class="d-grid gap-4 col-6 mx-auto mt-4">
+					<button type="button" class="btn custom-btn" onclick="location.href='{% url 'login' %}'">FAZER
+						LOGIN</button>
+					<button type="button" class="btn custom-btn" onclick="location.href='{% url 'idempo' %}'">MODO
+						ÚNICO</button>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-md-8 col-lg-7 mchatTitle text-center text-lg-left">
+			<h1>M-CHAT</h1>
+			<span class="textDarker">FORMULÁRIO DE </span><span class="textSofter">RASTREAMENTO PRECOCE </span><span
+				class="textDarker">DE </span> <span class="textSofter">AUTISMO </span><span class="textDarker">PARA
+				CRIANÇAS ATÉ 30 MESES
+			</span>
+	</div>
+</div>
+{% endblock %}
