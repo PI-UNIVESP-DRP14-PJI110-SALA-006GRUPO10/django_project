@@ -215,7 +215,7 @@ body {
 
 .backButtonResult {
 	font-weight: bold;
-	margin-top: 2vh;
+	margin-top: -8vh;
 	color: #ffffff;
 	width: 10vw;
 	z-index: 100;
